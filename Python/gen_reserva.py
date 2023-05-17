@@ -20,21 +20,20 @@ def generar_fecha():
 
 
 def generar_registro(num):
+    '''
     fecha_in = generar_fecha()
     fecha_out = generar_fecha()
     while fecha_out <= fecha_in or fecha_out >= fecha_in + timedelta(days=14):
         fecha_out = generar_fecha()
+    '''
 
-    return [num, fecha_in, fecha_out, random.randint(1, 50)]
+    return [num, random.randint(1, 50)]
 
 
 def main():
     registros = []
     for i in range(1, 25):
         registros.append(generar_registro(i))
-
-    # ordenar
-    registros = sorted(registros, key=lambda x: x[1])
 
     # Exportar
     nombre_archivo = "txt/registro_reservas.csv"

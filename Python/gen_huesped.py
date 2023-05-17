@@ -46,7 +46,7 @@ def generar_registro(num):
     nom = nombres[random.randint(1,150)]
     apl = apellidos[random.randint(1,150)]
 
-    return [num, nom, apl, random.randint(1, 4)]
+    return [num, random.randint(1, 4), nom, apl]
 
 
 def main():

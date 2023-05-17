@@ -40,11 +40,11 @@ LOAD DATA INFILE 'HMS/txt/registro_reservas.csv'
 # Importacion Habitaciones reservadas
 LOAD DATA INFILE 'HMS/txt/registro_habitaciones_reservadas.csv'
     INTO TABLE Habitaciones_reservadas
-    FIELDS TERMINATED BY ','
-    LINES TERMINATED BY '\n';
-
-# Importacion Hbaitaciones ocupadas
-LOAD DATA INFILE 'HMS/txt/registro_habitaciones_ocupadas.csv'
-    INTO TABLE Habitaciones_ocupadas
-    FIELDS TERMINATED BY ','
-    LINES TERMINATED BY '\n';
+	FIELDS TERMINATED BY ',' 
+	LINES TERMINATED BY '\n' 
+	(idHabitaciones_reservadas, idReservas, idHabitacion, check_in, check_out);
+UPDATE Habitaciones_reservadas AS hr
+JOIN Reservas AS r ON hr.idReservas = r.idReservas
+JOIN Habitacion AS h ON hr.idHabitacion = h.idHabitacion
+SET hr.idHuesped = r.idHuesped,
+    hr.idTipo_habitacion = h.idTipo_habitacion;
