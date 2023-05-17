@@ -25,12 +25,12 @@ WHERE r.idReservas IN (SELECT idReservas FROM Habitaciones_reservadas WHERE chec
 
 #**
 # Obtener el número de habitaciones reservadas por tipo de habitación para una reserva específica
-SELECT th.descripcion AS tipo_habitacion, COUNT(*) AS cantidad_reservadas
-FROM Habitaciones_reservadas hr
-JOIN Habitacion hab ON hr.idHabitacion = hab.idHabitacion
-JOIN Tipo_habitacion th ON hab.idTipo_habitacion = th.idTipo_habitacion
-WHERE hr.idReservas = (SELECT idReservas FROM Reservas WHERE idHuesped = 27); -- Cambiar el valor 1 por el ID del huésped deseado
-GROUP BY th.descripcion;
+#SELECT th.descripcion AS tipo_habitacion, COUNT(*) AS cantidad_reservadas
+#FROM Habitaciones_reservadas hr
+#JOIN Habitacion hab ON hr.idHabitacion = hab.idHabitacion
+#JOIN Tipo_habitacion th ON hab.idTipo_habitacion = th.idTipo_habitacion
+#WHERE hr.idReservas = (SELECT idReservas FROM Reservas WHERE idHuesped = 27); -- Cambiar el valor 1 por el ID del huésped deseado
+#GROUP BY th.descripcion;
 
 # Obtener el nombre del huésped que realizó la reserva más reciente
 SELECT CONCAT(h.nombre, ' ', h.apellidos) AS nombre_huesped
