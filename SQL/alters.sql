@@ -10,7 +10,7 @@ DROP COLUMN status;
 ALTER TABLE Tipo_habitacion
 MODIFY capacidad INT UNSIGNED;
 
-# Agregar una restricción de clave foránea (FK) a la tabla Reservas
+# Agregar una restricción de clave foránea a la tabla Reservas
 ALTER TABLE Reservas
 ADD CONSTRAINT fk_reservas_huesped FOREIGN KEY (idHuesped)
 REFERENCES Huesped(idHuesped);

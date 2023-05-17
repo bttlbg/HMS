@@ -72,4 +72,3 @@ CREATE TABLE IF NOT EXISTS Habitaciones_reservadas(
     CONSTRAINT fk_h_reservadas FOREIGN KEY (idReservas, idHuesped) REFERENCES Reservas(idReservas, idHuesped),
     CONSTRAINT fk_hbt FOREIGN KEY (idHabitacion, idTipo_habitacion) REFERENCES Habitacion(idHabitacion, idTipo_habitacion)
 );
-DROP TABLE Habitaciones_reservadas;
